@@ -1,17 +1,17 @@
-
-#Edited on Feature branch
 node('master') 
 {
-  stage('ContinuousDownload_master') 
-  {
-    git 'https://github.com/selenium-saikrishna/maven.git'
-  } 
-  stage('ContinuousBuild_master') 
-  {
-    sh 'mvn package'
-  } 
-  
+    stage('Continuous Download') 
+	{
+    git 'https://github.com/sunildevops77/maven.git'
+	}
+    stage('Continuous Build') 
+	{
+    sh label: '', script: 'mvn package'
+	}
+    stage('Continuous Deployment') 
+	{
 }
+  
   
   
   
